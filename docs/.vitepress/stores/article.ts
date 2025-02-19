@@ -4,9 +4,9 @@ import { ref } from 'vue'
 import { getDomain } from '../utils/link'
 import { getAvatarUrl } from '../utils/member'
 
-const defaultPreferce = {
+const defaultPreference = {
     author: 'raw' as keyof typeof authorMap,
-    avatar: 'avatar' as keyof typeof avatarMap,
+    avatar: 'name' as keyof typeof avatarMap,
 }
 
 export const authorMap = {
@@ -40,7 +40,7 @@ export const avatarMap = {
 }
 
 export const useArticleStore = defineStore('article', () => {
-    const preference = ref({ ...defaultPreferce })
+    const preference = ref({ ...defaultPreference })
     const getAuthor = (m: Member) => authorMap[preference.value.author].transform(m)
     const getAvatar = (m: Member) => avatarMap[preference.value.avatar].transform(m)
 
