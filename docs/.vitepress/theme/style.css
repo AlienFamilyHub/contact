@@ -1,0 +1,58 @@
+/* stylelint-disable selector-class-pattern */
+:root {
+    --vp-c-brand-1: #37f;
+    --vp-c-brand-2: #3af;
+    --vp-c-brand-3: #49e;
+    --vp-c-brand-soft: #3af4;
+}
+
+.dark:root {
+    --vp-c-brand-1: #5af;
+}
+
+.VPFeature {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.VPFeature .icon {
+    position: absolute;
+    opacity: 0.15;
+    right: 10%;
+    background-color: transparent;
+    font-size: 8em;
+    z-index: -1;
+}
+
+.fa-solid,
+.fa-regular,
+.fa-brands {
+    width: 1.3em;
+    vertical-align: middle;
+    text-align: center;
+}
+
+svg:where(.iconify) {
+    display: inline-block;
+    flex-shrink: 0;
+    font-size: 1.2em;
+    vertical-align: sub;
+}
+
+.tippy-box {
+    padding: 0.3em 0.6em;
+    border-radius: 0.5em;
+    box-shadow: var(--vp-shadow-3);
+    background-color: var(--vp-c-bg-elv);
+    font-size: 0.8em;
+    color: var(--c-text-2);
+}
+
+.tippy-box[data-state="hidden"] {
+    opacity: 0;
+}
+
+.tippy-box > .tippy-svg-arrow {
+    fill: var(--vp-c-bg-elv);
+}
