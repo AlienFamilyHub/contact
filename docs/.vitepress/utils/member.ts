@@ -14,13 +14,6 @@ export interface Member {
     feed: string
 }
 
-export function getAgeByBirthYear(birthYear: string) {
-    const year = Number(birthYear)
-    if (!birthYear.length || Number.isNaN(year))
-        return birthYear
-    return `${new Date().getFullYear() - year} 岁`
-}
-
 export function getAvatarUrl(option: { avatarType: string, avatar: string }) {
     const { avatarType: type, avatar } = option
     if (type === 'github')

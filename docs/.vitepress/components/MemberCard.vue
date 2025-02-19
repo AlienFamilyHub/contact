@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Member } from '../utils/member'
 import { getDomain } from '../utils/link'
-import { getAgeByBirthYear, getAvatarUrl } from '../utils/member'
+import { getAvatarUrl } from '../utils/member'
 
 defineProps<Member>()
 </script>
@@ -25,9 +25,6 @@ defineProps<Member>()
         <p class="desc">
             {{ desc }}
         </p>
-        <span class="age">
-            {{ getAgeByBirthYear(birthYear) }}
-        </span>
         <a class="website" hidden :href="website" target="_blank">
             {{ getDomain(website) }}
             <Icon icon="ri:arrow-right-line" />
@@ -85,15 +82,6 @@ defineProps<Member>()
 
 .card:hover .desc {
     opacity: 0;
-}
-
-.age {
-    position: absolute;
-    opacity: 0.1;
-    right: 0;
-    bottom: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .card:hover .website {

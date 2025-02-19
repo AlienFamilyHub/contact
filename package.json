@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.2.0",
   "private": true,
+  "packageManager": "pnpm@9.15.5",
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
@@ -15,6 +16,7 @@
     "@vueuse/core": "^12.7.0",
     "@zinkawaii/stylelint-config": "^0.3.0",
     "parse-domain": "^8.2.2",
+    "pinia": "^3.0.1",
     "pinia-plugin-persistedstate": "^4.2.0",
     "vitepress": "^1.6.3",
     "vue-tippy": "^6.6.0"
