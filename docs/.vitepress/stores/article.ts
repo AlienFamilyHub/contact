@@ -1,4 +1,5 @@
 import type { Member } from '../utils/member'
+import { useLocalStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 import { getDomain } from '../utils/link'
@@ -57,7 +58,7 @@ export const sizeMap = {
 }
 
 export const useArticleStore = defineStore('article', () => {
-    const preference = ref({ ...defaultPreference })
+    const preference = useLocalStorage('article-preference', { ...defaultPreference })
     const getAuthor = (m: Member) => authorMap[preference.value.author].transform(m)
     const getAvatar = (m: Member) => avatarMap[preference.value.avatar].transform(m)
     const size = computed(() => sizeMap[preference.value.size].val)
@@ -68,4 +69,4 @@ export const useArticleStore = defineStore('article', () => {
         getAvatar,
         size,
     }
-}, { persist: true })
+})
