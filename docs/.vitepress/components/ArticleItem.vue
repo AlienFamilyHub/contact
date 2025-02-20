@@ -11,6 +11,7 @@ const article = useArticleStore()
 const dateLabel = new Date(props.date).toLocaleString('zh-CN', { year: '2-digit', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
 
 const member = getMemberByFeed(props.link)
+const author = computed(() => article.getAuthor(member) || props.author)
 const avatar = computed(() => article.getAvatar(member))
 </script>
 
@@ -24,7 +25,7 @@ const avatar = computed(() => article.getAvatar(member))
         <AutoCode class="summary scrollcheck-y" tag="p" :text="summary" />
         <div class="info-line">
             <img v-if="avatar" :src="avatar" :alt="member.name" class="avatar">
-            <span class="author">{{ article.getAuthor(member) || props.author }}</span> ·
+            <span class="author">{{ author }}</span> ·
             <time class="date" :datetime="date">
                 {{ dateLabel }}
             </time>
