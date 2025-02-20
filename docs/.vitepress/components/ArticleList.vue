@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import type { Article } from '../utils/atricle'
+import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue'
+import { useArticleStore } from '../stores/article'
 import ArticleItem from './ArticleItem.vue'
 import ArticlePreference from './ArticlePreference.vue'
+
+const { preference, size } = storeToRefs(useArticleStore())
 
 const loading = ref(false)
 // 根据 API 返回的数据格式定义
@@ -50,7 +54,7 @@ onUnmounted(() => {
     <h1>文章列表</h1>
     <p class="stats">
         共 {{ pageStatus.total }} 篇文章
-        <Dropdown trigger="click">
+        <Dropdown>
             <Icon icon="ri:list-settings-fill" />
             <template #content>
                 <ArticlePreference />
@@ -58,7 +62,7 @@ onUnmounted(() => {
         </Dropdown>
     </p>
 
-    <TransitionGroup tag="section" class="article-list">
+    <TransitionGroup tag="section" class="article-list" :class="{ narrow: !preference.wide }">
         <ArticleItem v-for="item in articleList" :key="item._id" v-bind="item" />
         <template v-if="pageStatus.has_next_page">
             <div v-for="i in pageStatus.size" ref="load-trigger" :key="i" class="loading-item" />
@@ -68,18 +72,26 @@ onUnmounted(() => {
 
 <style scoped>
 h1, .stats {
-    margin: 2rem 0;
+    margin: 2em 0 2rem;
+    font: revert;
+    line-height: normal;
     text-align: center;
 }
 
 .article-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(v-bind(size), 1fr));
     gap: 1rem;
+    padding: 0 5%;
+}
+
+.article-list.narrow {
+    max-width: 83rem;
+    margin: 0 auto;
 }
 
 .loading-item {
-    height: 10rem;
+    min-height: 10rem;
     border-radius: 0.5rem;
     background-color: var(--vp-c-bg-soft);
     animation: fade-in 1s both;

@@ -1,12 +1,14 @@
 import type { Member } from '../utils/member'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { getDomain } from '../utils/link'
 import { getAvatarUrl } from '../utils/member'
 
 const defaultPreference = {
     author: 'raw' as keyof typeof authorMap,
     avatar: 'name' as keyof typeof avatarMap,
+    size: 'medium' as keyof typeof sizeMap,
+    wide: false,
 }
 
 export const authorMap = {
@@ -39,14 +41,31 @@ export const avatarMap = {
     },
 }
 
+export const sizeMap = {
+    small: {
+        label: '小',
+        val: '16em',
+    },
+    medium: {
+        label: '中',
+        val: '20em',
+    },
+    large: {
+        label: '大',
+        val: '24em',
+    },
+}
+
 export const useArticleStore = defineStore('article', () => {
     const preference = ref({ ...defaultPreference })
     const getAuthor = (m: Member) => authorMap[preference.value.author].transform(m)
     const getAvatar = (m: Member) => avatarMap[preference.value.avatar].transform(m)
+    const size = computed(() => sizeMap[preference.value.size].val)
 
     return {
         preference,
         getAuthor,
         getAvatar,
+        size,
     }
 }, { persist: true })

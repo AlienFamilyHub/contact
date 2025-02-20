@@ -1,24 +1,32 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { authorMap, avatarMap, useArticleStore } from '../stores/article'
+import { authorMap, avatarMap, sizeMap, useArticleStore } from '../stores/article'
 
 const { preference } = storeToRefs(useArticleStore())
 </script>
 
 <template>
     <form>
-        <label for="preference">来源展示</label>
-        <select id="preference" v-model="preference.author">
+        <label for="author">来源展示</label>
+        <select id="author" v-model="preference.author">
             <option v-for="(author, key) in authorMap" :key :value="key">
                 {{ author.label }}
             </option>
         </select>
-        <label for="preference">头像展示</label>
-        <select id="preference" v-model="preference.avatar">
+        <label for="avatar">头像展示</label>
+        <select id="avatar" v-model="preference.avatar">
             <option v-for="(avatar, key) in avatarMap" :key :value="key">
                 {{ avatar.label }}
             </option>
         </select>
+        <label for="size">卡片尺寸</label>
+        <select id="size" v-model="preference.size">
+            <option v-for="(size, key) in sizeMap" :key :value="key">
+                {{ size.label }}
+            </option>
+        </select>
+        <label for="wide">宽屏</label>
+        <input id="wide" v-model="preference.wide" type="checkbox">
     </form>
 </template>
 
@@ -26,7 +34,12 @@ const { preference } = storeToRefs(useArticleStore())
 form {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 1rem;
+    gap: 0.5rem 1rem;
+    padding: 0.5rem;
     text-align: left;
+}
+
+select {
+    appearance: auto;
 }
 </style>
