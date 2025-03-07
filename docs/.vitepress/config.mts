@@ -8,7 +8,7 @@ export default defineConfig({
     titleTemplate: '相侵相碍异家人 (Alien Family Hub)',
     description: '',
     lastUpdated: true,
-    cleanUrls: true,
+    // cleanUrls: true,
 
     themeConfig: {
         // https://vitepress.dev/zh/reference/default-theme-config

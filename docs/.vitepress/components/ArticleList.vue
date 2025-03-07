@@ -3,10 +3,12 @@ import type { Article } from '../utils/atricle'
 import { storeToRefs } from 'pinia'
 import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue'
 import { useArticleStore } from '../stores/article'
+import { queryBuild } from '../utils/link'
 import ArticleItem from './ArticleItem.vue'
 import ArticlePreference from './ArticlePreference.vue'
 
 const { preference, size } = storeToRefs(useArticleStore())
+const { api } = useArticleStore()
 
 const loading = ref(false)
 // 根据 API 返回的数据格式定义
@@ -25,8 +27,12 @@ async function loadMore() {
         return
     loading.value = true
 
-    const { size, current_page: page } = pageStatus.value
-    const resp = await fetch(`https://tapi-afh.rikki.top/feed/?size=${size}&page=${page + 1}`)
+    const url = queryBuild(api('/feed/'), {
+        size: pageStatus.value.size,
+        page: pageStatus.value.current_page + 1,
+    })
+
+    const resp = await fetch(url)
     // data: { code, status, data: [], message }
     const { data, message } = await resp.json()
 
@@ -52,42 +58,55 @@ onUnmounted(() => {
 
 <template>
     <h1>文章列表</h1>
-    <p class="stats">
-        共 {{ pageStatus.total }} 篇文章
+    <p class="stats vp-doc">
+        <span>共 {{ pageStatus.total }} 篇文章</span>
+
+        <a :href="api('/feed/opml')" target="_blank">OPML</a>
+
         <Dropdown>
-            <Icon icon="ri:list-settings-fill" />
+            <Icon icon="ri:list-settings-fill" class="cursor-pointer" />
             <template #content>
                 <ArticlePreference />
             </template>
         </Dropdown>
     </p>
 
-    <TransitionGroup tag="section" class="article-list" :class="{ narrow: !preference.wide }">
+    <section class="article-list" :class="{ narrow: !preference.wide }" :style="{ '--size': size }">
         <ArticleItem v-for="item in articleList" :key="item._id" v-bind="item" />
-        <template v-if="pageStatus.has_next_page">
-            <div v-for="i in pageStatus.size" ref="load-trigger" :key="i" class="loading-item" />
-        </template>
-    </TransitionGroup>
+        <div
+            v-for="i in pageStatus.size"
+            v-show="pageStatus.has_next_page"
+            ref="load-trigger"
+            :key="i"
+            class="loading-item"
+        />
+    </section>
 </template>
 
 <style scoped>
-h1, .stats {
+h1 {
     margin: 2em 0 2rem;
     font: revert;
     line-height: normal;
     text-align: center;
 }
 
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
 .article-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(v-bind(size), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--size, 20rem), 1fr));
     gap: 1rem;
+    margin: 2rem auto;
     padding: 0 5%;
 }
 
 .article-list.narrow {
     max-width: 83rem;
-    margin: 0 auto;
 }
 
 .loading-item {
@@ -101,13 +120,5 @@ h1, .stats {
 @keyframes fade-in {
     0% { opacity: 0; }
     50% { opacity: 1; }
-}
-
-.loading-item.v-enter-from {
-    opacity: 0;
-}
-
-.loading-item.v-leave-active {
-    display: none;
 }
 </style>

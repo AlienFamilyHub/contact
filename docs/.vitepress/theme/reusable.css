@@ -1,6 +1,14 @@
-.scrollcheck-x, .scrollcheck-y {
-    scrollbar-width: thin;
+.cursor-pointer {
+    cursor: pointer;
 }
+
+.bg-blur {
+    backdrop-filter: blur(0.5em);
+}
+
+/* .scrollcheck-x, .scrollcheck-y {
+    scrollbar-width: thin;
+} */
 
 .scrollcheck-x::-webkit-scrollbar, .scrollcheck-y::-webkit-scrollbar {
     width: 6px;

@@ -10,6 +10,29 @@
     --vp-c-brand-1: #5af;
 }
 
+select, input {
+    height: 1.8em;
+    border-radius: 0.3rem;
+    background-color: var(--vp-c-default-soft);
+}
+
+select {
+    padding: 0 0.2rem;
+    appearance: auto;
+}
+
+option {
+    background-color: var(--vp-c-bg-soft);
+}
+
+input {
+    padding: 0 0.5rem;
+}
+
+input[type="checkbox"] {
+    height: 1.2em;
+}
+
 .VPFeature {
     position: relative;
     overflow: hidden;
