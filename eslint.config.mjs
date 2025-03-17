@@ -9,7 +9,7 @@ export default antfu({
         'yaml/indent': ['error', 2],
     },
 }, {
-    files: ['*.json'],
+    files: ['**/*.json'],
     rules: {
         'jsonc/sort-keys': 'off',
         'style/eol-last': 'off',

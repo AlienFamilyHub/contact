@@ -102,7 +102,6 @@ h1 {
     grid-template-columns: repeat(auto-fill, minmax(var(--size, 20rem), 1fr));
     gap: 1rem;
     margin: 2rem auto;
-    padding: 0 5%;
 }
 
 .article-list.narrow {

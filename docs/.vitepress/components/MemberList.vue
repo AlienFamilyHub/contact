@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import membersData from '../data/members'
+import membersData from '../data/members.json'
 import MemberCard from './MemberCard.vue'
 
 const members = ref([...membersData])

@@ -1,4 +1,4 @@
-import members from '../data/members'
+import members from '../data/members.json'
 import { getDomain } from './link'
 
 export interface Member {
@@ -6,7 +6,7 @@ export interface Member {
     title: string
     desc: string
 
-    avatarType: 'github' | 'qq' | 'url'
+    avatarType: 'github' | 'qq' | 'url' | (string & {})
     avatar: string
 
     github: string
