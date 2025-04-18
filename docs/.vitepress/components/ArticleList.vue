@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { Article } from '../utils/atricle'
+import { useIntersectionObserver } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
-import { onMounted, onUnmounted, ref, useTemplateRef } from 'vue'
+import { ref, useTemplateRef } from 'vue'
 import { useArticleStore } from '../stores/article'
 import { queryBuild } from '../utils/link'
 import ArticleItem from './ArticleItem.vue'
@@ -42,17 +43,11 @@ async function loadMore() {
 }
 
 const loadTrigger = useTemplateRef<Element[]>('load-trigger')
-let observer: IntersectionObserver
-
-onMounted(() => {
-    observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => entry.isIntersecting && loadMore())
-    })
-    loadTrigger.value?.forEach(item => observer.observe(item))
-})
-
-onUnmounted(() => {
-    observer?.disconnect()
+// `useIntersectionObserver` | `useTemplateRef` of array type cannot be passed as argument
+// https://github.com/vueuse/vueuse/issues/4712
+useIntersectionObserver(loadTrigger, ([{ isIntersecting }]) => {
+    if (isIntersecting)
+        loadMore()
 })
 </script>
 

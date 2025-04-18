@@ -266,7 +266,17 @@
     "avatarType": "qq",
     "avatar": "2869505042",
     "github": "qnquenan",
-    "website": "https://quenan.cn",
-    "feed": "https://blog.quenan.cn"
+    "website": "https://blog.quenan.cn/",
+    "feed": "https://blog.quenan.cn/atom.xml"
+  },
+  {
+    "name": "煮雪",
+    "title": "",
+    "desc": "如月之恒，如日之升",
+    "avatarType": "qq",
+    "avatar": "624058167",
+    "github": "Cent1pedee",
+    "website": "https://blog.cent1pedee.top/",
+    "feed": "https://blog.cent1pedee.top/atom.xml"
   }
 ]
