@@ -36,6 +36,7 @@ defineProps<Member>()
 .card {
     position: relative;
     overflow: hidden;
+    overflow: clip;
     padding: 0.8rem;
     border-radius: 0.5rem;
     background-color: var(--vp-c-bg-soft);

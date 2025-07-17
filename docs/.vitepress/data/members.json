@@ -278,5 +278,15 @@
     "github": "Cent1pedee",
     "website": "https://blog.cent1pedee.top/",
     "feed": "https://blog.cent1pedee.top/atom.xml"
+  },
+  {
+    "name": "幻梦晓寒",
+    "title": "晓寒",
+    "desc": "醉后不知天在水，满船清梦压星河",
+    "avatarType": "qq",
+    "avatar": "457970652",
+    "github": "Dreamkaka",
+    "website": "https://blog.xiaohan-kaka.top/",
+    "feed": "https://blog.xiaohan-kaka.top/feed"
   }
 ]
