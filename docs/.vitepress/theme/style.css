@@ -1,13 +1,13 @@
 /* stylelint-disable selector-class-pattern */
 :root {
-    --vp-c-brand-1: #37f;
-    --vp-c-brand-2: #3af;
-    --vp-c-brand-3: #49e;
-    --vp-c-brand-soft: #3af4;
+    --vp-c-brand-1: #37F;
+    --vp-c-brand-2: #3AF;
+    --vp-c-brand-3: #49E;
+    --vp-c-brand-soft: #3AF4;
 }
 
 .dark:root {
-    --vp-c-brand-1: #5af;
+    --vp-c-brand-1: #5AF;
 }
 
 select, input {

@@ -59,7 +59,7 @@ defineProps<Member>()
     position: absolute;
     opacity: 0.6;
     margin-top: -1em;
-    mask: linear-gradient(#fff, transparent);
+    mask: linear-gradient(#FFF, transparent);
     font-size: 14px;
     font-weight: bold;
 }

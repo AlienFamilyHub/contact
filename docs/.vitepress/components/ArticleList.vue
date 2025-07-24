@@ -43,8 +43,8 @@ async function loadMore() {
 }
 
 const loadTrigger = useTemplateRef<Element[]>('load-trigger')
+// @ts-expect-error https://github.com/vueuse/vueuse/issues/4712
 // `useIntersectionObserver` | `useTemplateRef` of array type cannot be passed as argument
-// https://github.com/vueuse/vueuse/issues/4712
 useIntersectionObserver(loadTrigger, ([{ isIntersecting }]) => {
     if (isIntersecting)
         loadMore()
