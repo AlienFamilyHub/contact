@@ -60,6 +60,7 @@ function nav(): DefaultTheme.NavItem[] {
     return [
         { text: '成员', link: '/' },
         { text: '文章', link: '/article' },
+        { text: '小说', link: 'https://novel.afhub.top/' },
     ]
 }
 
