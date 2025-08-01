@@ -288,5 +288,15 @@
     "github": "Dreamkaka",
     "website": "https://blog.xiaohan-kaka.top/",
     "feed": "https://blog.xiaohan-kaka.top/feed"
+  },
+  {
+    "name": "Teror Fox",
+    "title": "",
+    "desc": "方寸之间，深不见底",
+    "avatarType": "github",
+    "avatar": "sysfox",
+    "github": "sysfox",
+    "website": "https://blog.trfox.top/",
+    "feed": "https://blog.trfox.top/feed"
   }
 ]
