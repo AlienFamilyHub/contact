@@ -298,5 +298,15 @@
     "github": "sysfox",
     "website": "https://blog.trfox.top/",
     "feed": "https://blog.trfox.top/feed"
+  },
+  {
+    "name": "Admibrill",
+    "title": "埃氮幂",
+    "desc": "Run the code.Run after the code.",
+    "avatarType": "github",
+    "avatar": "admibrill",
+    "github": "admibrill",
+    "website": "https://blog.qyadbr.top/",
+    "feed": "https://blog.qyadbr.top/atom.xml"
   }
 ]
