@@ -6,7 +6,7 @@ import DefaultTheme from 'vitepress/theme-without-fonts'
 import { h } from 'vue'
 import VueTippy, { roundArrow } from 'vue-tippy'
 
-import Dropdown from '../components/Dropdown.vue'
+import Dropdown from '../components/atomic/Dropdown.vue'
 import Footer from '../components/Footer.vue'
 import NotFound from '../components/NotFound.vue'
 
@@ -16,27 +16,27 @@ import './theme-enhanced.css'
 import 'tippy.js/dist/svg-arrow.css'
 
 export default {
-    extends: DefaultTheme,
-    Layout: () => {
-        return h(DefaultTheme.Layout, null, {
-            // https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
-            'doc-after': () => h(Footer),
-            'not-found': () => h(NotFound),
-        })
-    },
-    enhanceApp({ app }) {
-        app.component('Dropdown', Dropdown)
-        app.component('Icon', Icon)
+	extends: DefaultTheme,
+	Layout: () => {
+		return h(DefaultTheme.Layout, null, {
+			// https://vitepress.dev/zh/guide/extending-default-theme#layout-slots
+			'doc-after': () => h(Footer),
+			'not-found': () => h(NotFound),
+		})
+	},
+	enhanceApp({ app }) {
+		app.component('Dropdown', Dropdown)
+		app.component('Icon', Icon)
 
-        const pinia = createPinia()
+		const pinia = createPinia()
 
-        app.use(pinia)
-        app.use(VueTippy, {
-            component: 'Tooltip',
-            directive: 'tip',
-            defaultProps: {
-                arrow: roundArrow,
-            },
-        })
-    },
+		app.use(pinia)
+		app.use(VueTippy, {
+			component: 'Tooltip',
+			directive: 'tip',
+			defaultProps: {
+				arrow: roundArrow,
+			},
+		})
+	},
 } satisfies Theme

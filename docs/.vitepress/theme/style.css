@@ -1,81 +1,81 @@
 /* stylelint-disable selector-class-pattern */
 :root {
-    --vp-c-brand-1: #37F;
-    --vp-c-brand-2: #3AF;
-    --vp-c-brand-3: #49E;
-    --vp-c-brand-soft: #3AF4;
+	--vp-c-brand-1: #37F;
+	--vp-c-brand-2: #3AF;
+	--vp-c-brand-3: #49E;
+	--vp-c-brand-soft: #3AF4;
 }
 
 .dark:root {
-    --vp-c-brand-1: #5AF;
+	--vp-c-brand-1: #5AF;
 }
 
 select, input {
-    height: 1.8em;
-    border-radius: 0.3rem;
-    background-color: var(--vp-c-default-soft);
+	height: 1.8em;
+	border-radius: 0.3rem;
+	background-color: var(--vp-c-default-soft);
 }
 
 select {
-    padding: 0 0.2rem;
-    appearance: auto;
+	padding: 0 0.2rem;
+	appearance: auto;
 }
 
 option {
-    background-color: var(--vp-c-bg-soft);
+	background-color: var(--vp-c-bg-soft);
 }
 
 input {
-    padding: 0 0.5rem;
+	padding: 0 0.5rem;
 }
 
 input[type="checkbox"] {
-    height: 1.2em;
+	height: 1.2em;
 }
 
 .VPFeature {
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
 }
 
 .VPFeature .icon {
-    position: absolute;
-    opacity: 0.15;
-    right: 10%;
-    background-color: transparent;
-    font-size: 8em;
-    z-index: -1;
+	position: absolute;
+	opacity: 0.15;
+	right: 10%;
+	background-color: transparent;
+	font-size: 8em;
+	z-index: -1;
 }
 
 .fa-solid,
 .fa-regular,
 .fa-brands {
-    width: 1.3em;
-    vertical-align: middle;
-    text-align: center;
+	width: 1.3em;
+	vertical-align: middle;
+	text-align: center;
 }
 
 svg:where(.iconify) {
-    display: inline-block;
-    flex-shrink: 0;
-    font-size: 1.2em;
-    vertical-align: sub;
+	display: inline-block;
+	flex-shrink: 0;
+	font-size: 1.2em;
+	vertical-align: sub;
 }
 
 .tippy-box {
-    padding: 0.3em 0.6em;
-    border-radius: 0.5em;
-    box-shadow: var(--vp-shadow-3);
-    background-color: var(--vp-c-bg-elv);
-    font-size: 0.8em;
-    color: var(--c-text-2);
+	padding: 0.3em 0.6em;
+	border-radius: 0.5em;
+	box-shadow: var(--vp-shadow-3);
+	background-color: var(--vp-c-bg-elv);
+	font-size: 0.8em;
+	color: var(--c-text-2);
 }
 
 .tippy-box[data-state="hidden"] {
-    opacity: 0;
+	opacity: 0;
 }
 
 .tippy-box > .tippy-svg-arrow {
-    fill: var(--vp-c-bg-elv);
+	fill: var(--vp-c-bg-elv);
 }
