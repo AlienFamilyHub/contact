@@ -1,7 +1,7 @@
 {
   "name": "afh-contact",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": true,
   "scripts": {
     "dev": "vitepress dev docs",
@@ -9,18 +9,20 @@
     "preview": "vitepress preview docs",
     "lint": "eslint ."
   },
-  "devDependencies": {
-    "@antfu/eslint-config": "^6.0.0",
+  "dependencies": {
     "@iconify/vue": "^5.0.0",
-    "@vueuse/core": "^13.6.0",
-    "@zinkawaii/stylelint-config": "^0.3.3",
-    "eslint": "^9.33.0",
+    "@vueuse/core": "^14.0.0",
     "parse-domain": "^8.2.2",
     "pinia": "^3.0.3",
-    "stylelint": "^16.23.1",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.18",
+    "vue": "^3.5.22",
     "vue-tippy": "^6.7.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.0.0",
+    "@zinkawaii/stylelint-config": "^0.3.3",
+    "eslint": "^9.38.0",
+    "stylelint": "^16.25.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
