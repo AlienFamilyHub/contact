@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.0.0",
-    "@zinkawaii/stylelint-config": "^0.3.3",
+    "@zinkawaii/stylelint-config": "^0.4.0",
     "eslint": "^9.38.0",
     "stylelint": "^16.25.0"
   },
