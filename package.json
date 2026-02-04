@@ -22,7 +22,7 @@
     "@antfu/eslint-config": "^6.0.0",
     "@zinkawaii/stylelint-config": "^0.3.3",
     "eslint": "^9.38.0",
-    "stylelint": "^16.25.0"
+    "stylelint": "^17.1.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
