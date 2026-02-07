@@ -1,13 +1,31 @@
 /* stylelint-disable selector-class-pattern */
 :root {
+	--vp-font-family-base: "InterVariable", "Noto Sans SC", system-ui, sans-serif;
+	--vp-font-family-mono: ui-monospace, "JetBrains Mono", "Cascadia Code", "Consolas", "monospace", var(--vp-font-family-base), monospace;
 	--vp-c-brand-1: #37F;
 	--vp-c-brand-2: #3AF;
 	--vp-c-brand-3: #49E;
 	--vp-c-brand-soft: #3AF4;
+
+	font-variant-alternates: styleset(open-digits, disambiguation, round-quotes-and-commas);
+	text-autospace: normal;
 }
 
-.dark:root {
+:root.dark {
 	--vp-c-brand-1: #5AF;
+}
+
+
+::selection {
+	background-color: var(--vp-c-brand-soft);
+}
+
+code, pre {
+	text-autospace: none;
+}
+
+button > svg:only-child {
+	display: block;
 }
 
 select, input {

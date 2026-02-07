@@ -47,9 +47,15 @@ export default defineConfig({
 	head: [
 		['link', { rel: 'icon', href: 'https://wsrv.nl/?url=avatars.githubusercontent.com/u/197213591?s=96&mask=hexagon' }],
 		['link', { rel: 'stylesheet', href: 'https://lib.baomitu.com/font-awesome/7.0.0/css/all.min.css', media: 'none', onload: 'media="all"' }],
+		['link', { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css', media: 'print', onload: 'this.media="all"' }],
 	],
 
 	vite: {
+		resolve: {
+			alias: {
+				'@': import.meta.dirname,
+			},
+		},
 		server: {
 			allowedHosts: true,
 		},

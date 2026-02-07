@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "vue.server.includeLanguages": [
+    "vue",
+    "markdown"
+  ]
+}

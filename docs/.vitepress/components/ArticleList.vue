@@ -59,7 +59,7 @@ useIntersectionObserver(loadTrigger, ([{ isIntersecting }]) => {
 	<a :href="api('/feed/opml')" target="_blank">OPML</a>
 
 	<Dropdown title="偏好设置">
-		<Icon icon="ri:list-settings-fill" class="cursor-pointer" />
+		<Icon icon="ri:list-settings-fill" class="cursor-pointer" width="20" />
 		<template #content>
 			<ArticlePreference />
 		</template>

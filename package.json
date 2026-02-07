@@ -11,18 +11,20 @@
   },
   "dependencies": {
     "@iconify/vue": "^5.0.0",
-    "@vueuse/core": "^14.0.0",
+    "@vueuse/core": "^14.2.0",
     "parse-domain": "^8.2.2",
-    "pinia": "^3.0.3",
-    "vitepress": "^1.6.4",
-    "vue": "^3.5.22",
+    "pinia": "^3.0.4",
+    "vitepress": "^2.0.0-alpha.16",
+    "vue": "^3.5.27",
     "vue-tippy": "^6.7.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.0.0",
-    "@zinkawaii/stylelint-config": "^0.3.3",
-    "eslint": "^9.38.0",
-    "stylelint": "^16.25.0"
+    "@antfu/eslint-config": "^7.2.0",
+    "@types/node": "^25.2.1",
+    "@zinkawaii/stylelint-config": "^0.4.0",
+    "@zinkawaii/tsconfig": "^0.0.2",
+    "eslint": "^10.0.0",
+    "stylelint": "^17.1.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
