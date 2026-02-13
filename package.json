@@ -22,7 +22,7 @@
     "@antfu/eslint-config": "^7.2.0",
     "@types/node": "^25.2.1",
     "@zinkawaii/stylelint-config": "^0.4.0",
-    "@zinkawaii/tsconfig": "^0.0.2",
+    "@zinkawaii/tsconfig": "^0.1.0",
     "eslint": "^10.0.0",
     "stylelint": "^17.1.1"
   },
