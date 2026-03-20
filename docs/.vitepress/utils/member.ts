@@ -17,8 +17,7 @@ export interface Member {
 export function getAvatarUrl(option: { avatarType: string, avatar: string }) {
 	const { avatarType: type, avatar } = option
 	if (type === 'github')
-	// return `https://avatars-githubusercontent.webp.se/${avatar}`
-		return `https://wsrv.nl/?url=github.com/${avatar}.png%3fsize=92`
+		return `https://avatars-githubusercontent.webp.se/${avatar}?s=96`
 	if (type === 'qq')
 		return `https://q1.qlogo.cn/g?b=qq&nk=${avatar}&s=4`
 	if (type === 'url')
@@ -30,7 +29,7 @@ const membersByFeed: Record<string, Member> = members.reduce((acc, member) => {
 	if (member.feed)
 		acc[getDomain(member.feed)] = member
 	return acc
-}, {})
+}, {} as Record<string, Member>)
 
 export function getMemberByFeed(feed: string) {
 	return membersByFeed[getDomain(feed)] ?? {}

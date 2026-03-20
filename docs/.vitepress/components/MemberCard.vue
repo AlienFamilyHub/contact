@@ -51,6 +51,7 @@ defineProps<Member>()
 .avatar {
 	width: 3rem;
 	height: 3rem;
+	margin: 0;
 	border-radius: 3rem;
 	object-fit: cover;
 }
@@ -90,7 +91,8 @@ defineProps<Member>()
 	align-items: center;
 	justify-content: center;
 	position: absolute;
-	inset: 4.5rem 0 0;
+	inset: auto 0 0;
+	height: 2em;
 	text-align: center;
 	animation: fade-in 0.3s;
 }

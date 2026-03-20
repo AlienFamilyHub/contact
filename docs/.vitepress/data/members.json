@@ -308,5 +308,25 @@
     "github": "admibrill",
     "website": "https://blog.qyadbr.top/",
     "feed": "https://blog.qyadbr.top/atom.xml"
+  },
+  {
+    "name": "Ziyang-Bai",
+    "title": "Ziyang",
+    "desc": "",
+    "avatarType": "github",
+    "avatar": "Ziyang-Bai",
+    "github": "Ziyang-Bai",
+    "website": "https://ziyangbai.com",
+    "feed": ""
+  },
+  {
+    "name": "Snowykami",
+    "title": "远野千束",
+    "desc": "轻思若水，雪化生香",
+    "avatarType": "github",
+    "avatar": "snowykami",
+    "github": "snowykami",
+    "website": "https://www.sfkm.me",
+    "feed": "https://blog.sfkm.me/rss.xml"
   }
 ]
